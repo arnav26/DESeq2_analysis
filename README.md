@@ -1,4 +1,4 @@
-README for Kallisto to DESeq2 Processing Pipeline
+README for Kallisto to DESeq2 Processing Pipeline. Written during my PhD in 2019.
 # Tximport
 
 This R script provides a pipeline for importing Kallisto quantification results, processing them into gene-level counts, and saving these counts for downstream differential expression analysis (e.g., with DESeq2).
