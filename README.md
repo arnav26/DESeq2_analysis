@@ -1,3 +1,43 @@
+README for Kallisto to DESeq2 Processing Pipeline
+# Tximport
+
+This R script provides a pipeline for importing Kallisto quantification results, processing them into gene-level counts, and saving these counts for downstream differential expression analysis (e.g., with DESeq2).
+Dependencies:
+
+Ensure that the following R libraries are installed:
+
+    tximport
+    biomaRt
+
+Workflow Steps:
+
+    Get Transcript to Gene Mapping: Fetches the mapping between transcripts and genes using the biomaRt package for the mouse genome (Mus musculus) from the Ensembl database.
+    Retrieve Kallisto Output Files: Detects the Kallisto output files (abundance.h5) from the working directory.
+    Import and Process Kallisto Files: Imports the Kallisto outputs and aggregates the transcript-level quantifications to gene-level counts using the tximport package.
+    Save Counts to File: The processed gene counts are saved to a file named gene_counts.
+
+Usage:
+
+    Working Directory Setup:
+        Ensure that the R working directory contains folders for each sample, and within each folder, there should be an abundance.h5 file which is the Kallisto output.
+        If your directory structure is different, modify the get_kallisto_files function accordingly.
+
+    Output File Produced: gene_counts
+
+    To Run the Script:
+
+    Simply source the script in R, and the pipeline will execute the steps sequentially:
+
+    R
+
+    source("path_to_script.R")
+
+Customization:
+
+    Adjust the biomaRt parameters if you are working with a different organism.
+    If your Kallisto output files are in a different directory or have a different naming convention, adjust the get_kallisto_files function.
+
+
 # DESeq2_analysis
 Differential gene expression analysis using DESeq2 using gene counts from Kallisto quantification
 README for DESeq2 Analysis Pipeline
